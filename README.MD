@@ -1,3 +1,5 @@
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/da548768516a41a29c2f7b38448c14d9/badge.svg)](https://www.quantifiedcode.com/app/project/da548768516a41a29c2f7b38448c14d9)
+
 A RESTful API written in Django for lookup USAC race results
 
 
