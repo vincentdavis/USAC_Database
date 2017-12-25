@@ -11,8 +11,8 @@ $ virtualenv -p python3 env
 $ source ./env/bin/activate
 $ pip install -r requirements.txt
 $ cd usacdata
-$ python manage.py migrate --settings=usacdata.settings_development
-$ python manage.py runserver  --settings=usacdata.settings_development
+$ python manage.py migrate --settings=usacdata.settings.local
+$ python manage.py runserver  --settings=usacdata.settings.local
 ```
 
 Then head to http://localhost:8000/api/v1/ in your browser to get started.

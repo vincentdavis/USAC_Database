@@ -14,7 +14,8 @@ import os
 import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+EXTERNAL_CONFIG_PATH = '/opt/webapps/usacdata/etc/external_config.py'
 
 
 # Quick-start development settings - unsuitable for production

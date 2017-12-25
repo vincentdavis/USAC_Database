@@ -1,4 +1,6 @@
-from usacdata.settings import *
+DEBUG = False
+
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
@@ -10,3 +12,5 @@ DATABASES = {
         'PASSWORD': 'a',
     }
 }
+
+HOSTNAME = 'localhost'

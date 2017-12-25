@@ -1,4 +1,4 @@
-from usacdata.settings import *
+from .base import *
 
 DATABASES = {
     'default': {
