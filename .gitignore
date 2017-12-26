@@ -61,8 +61,5 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
-# pycharm settings
 .idea
-
-# django media
-media/
+.env
