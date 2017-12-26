@@ -39,16 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'usac',
+    'django_filters',
+    'apps.usac',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -57,7 +57,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissions'
     ],
-    'DEFAULT_PAGINATION_CLASS': 'usacdata.CustomPagination',
+    'DEFAULT_PAGINATION_CLASS': 'apps.usac.rest_api.pagination.CustomPagination',
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',
                                 'rest_framework.filters.OrderingFilter'),
     'PAGE_SIZE': 25,
@@ -100,7 +100,7 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'Codata',
 }
 
-ROOT_URLCONF = 'usacdata.urls'
+ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
     {
@@ -118,7 +118,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'usacdata.wsgi.application'
+WSGI_APPLICATION = 'project.wsgi.application'
 
 LOGIN_URL = '/api/v1/'
 LOGIN_REDIRECT_URL = '/api/v1/'
@@ -176,3 +176,4 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")

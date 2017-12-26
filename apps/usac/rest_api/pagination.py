@@ -2,6 +2,10 @@ from rest_framework import pagination
 from rest_framework.response import Response
 
 
+__all__ = (
+    "CustomPagination",
+)
+
 class CustomPagination(pagination.PageNumberPagination):
     ''' Custom Pagination to be used in rest api'''
 

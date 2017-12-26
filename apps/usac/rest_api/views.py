@@ -1,10 +1,14 @@
 from rest_framework import viewsets
 
-from .serializers import DirectorSerializer, PromoterSerializer, \
-    EventTypeSerializer, EventDaySerializer, RaceSerializer, EventSerializer, \
-    ParticipantSerializer
-from usac.models import Director, Promoter, EventType, EventDay, Race, \
-    Participant, Event
+from .serializers import (
+    DirectorSerializer, PromoterSerializer,
+    EventTypeSerializer, EventDaySerializer, RaceSerializer, EventSerializer,
+    ParticipantSerializer,
+)
+from apps.usac.models import (
+    Director, Promoter, EventType, EventDay, Race,
+    Participant, Event,
+)
 # from .filters import PropertyFilter
 
 
@@ -40,7 +44,7 @@ class EventDayView(viewsets.ModelViewSet):
 
     queryset = EventDay.objects.all()
     serializer_class = EventDaySerializer
-    filter_fields = ('event', 'searchid', 'day', 'url', 'multipage')
+    filter_fields = ('event', 'search_id', 'day', 'url', 'multi_page')
     ordering_fields = '__all__'
 
 
@@ -49,7 +53,7 @@ class RaceView(viewsets.ModelViewSet):
 
     queryset = Race.objects.all()
     serializer_class = RaceSerializer
-    filter_fields = ('eventday', 'name', 'race_id', 'url')
+    filter_fields = ('event_day', 'name', 'race_id', 'url')
     ordering_fields = '__all__'
 
 
