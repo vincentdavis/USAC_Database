@@ -1,11 +1,16 @@
+import environ
+
 from .settings import *
 
+
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 ALLOWED_HOSTS = ['usac-dev.us-east-1.elasticbeanstalk.com']
 
 DEBUG = False
 
-if 'RDS_DB_NAME' in os.environ:
+if 'RDS_DB_NAME' in os.environ and os.environ['RDS_DB_NAME']:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',

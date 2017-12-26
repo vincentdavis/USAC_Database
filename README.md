@@ -20,6 +20,11 @@ Then head to http://localhost:8000/api/v1/ in your browser to get started.
 username: admin
 password: test1234
 
+#Settings
+##Create environment file using **.env_template** file in root directory
+    
+    $ cp .env_template .env
+
 
 #AWS
 

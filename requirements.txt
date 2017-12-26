@@ -4,3 +4,4 @@ djangorestframework==3.7.1
 djangorestframework-filters==0.8.0
 djangorestframework-jwt==1.11.0
 psycopg2==2.7.3
+django-environ==0.4.3
