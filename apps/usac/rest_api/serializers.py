@@ -1,7 +1,9 @@
 from rest_framework import serializers
 
-from usac.models import Director, Promoter, EventType, EventDay, Race, \
-    Participant, Event
+from apps.usac.models import (
+    Director, Promoter, EventType, EventDay, Race,
+    Participant, Event,
+)
 
 
 class DirectorSerializer(serializers.ModelSerializer):
