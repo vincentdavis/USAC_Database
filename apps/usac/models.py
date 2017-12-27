@@ -1,5 +1,15 @@
 from django.db import models
 
+__all__ = (
+    "Director",
+    "Promoter",
+    "EventType",
+    "Event",
+    "EventDay",
+    "Race",
+    "Participant",
+)
+
 
 class Director(models.Model):
     """

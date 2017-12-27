@@ -1,11 +1,11 @@
 from django.urls import include, path, re_path
 from django.contrib import admin
 from django.views.generic import RedirectView
-from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, \
-    verify_jwt_token
+from rest_framework_jwt.views import (
+    obtain_jwt_token, refresh_jwt_token, verify_jwt_token,
+)
 from django.conf import settings
 from django.conf.urls.static import static
-
 
 urlpatterns = [
   re_path(r'^$', RedirectView.as_view(url='/api/v1/')),
@@ -15,4 +15,8 @@ urlpatterns = [
   path('token/auth/', obtain_jwt_token),
   path('token/refresh/', refresh_jwt_token),
   path('token/verify/', verify_jwt_token),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

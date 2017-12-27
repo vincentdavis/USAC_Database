@@ -22,6 +22,7 @@ password: test1234
 
 #Settings
 ##Create environment file using **.env_template** file in root directory
+##Use **.env** file for all environments(development, staging, production)
     
     $ cp .env_template .env
 
@@ -65,6 +66,10 @@ password: test1234
 ###Then deploy
 
     $ eb deploy
+
+###or
+
+    $ eb deploy <env_name>
     
 ###Once it's finished you will be able to open it
 
