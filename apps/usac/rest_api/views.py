@@ -1,15 +1,19 @@
 from rest_framework import viewsets
 
-from .serializers import (
-    DirectorSerializer, PromoterSerializer,
-    EventTypeSerializer, EventDaySerializer, RaceSerializer, EventSerializer,
-    ParticipantSerializer,
-)
-from apps.usac.models import (
-    Director, Promoter, EventType, EventDay, Race,
-    Participant, Event,
-)
+from .serializers import *
+from apps.usac.models import *
+
 # from .filters import PropertyFilter
+
+__all__ = (
+    "DirectorView",
+    "PromoterView",
+    "EventTypeView",
+    "EventDayView",
+    "RaceView",
+    "ParticipantView",
+    "EventView",
+)
 
 
 class DirectorView(viewsets.ModelViewSet):
@@ -71,7 +75,9 @@ class EventView(viewsets.ModelViewSet):
 
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    filter_fields = ('name', 'location', 'state', 'start_date', 'end_date',
-                     'flyer_url', 'website_url', 'online_reg',
-                     'permit_number', 'director', 'promoter')
+    filter_fields = (
+        'name', 'location', 'state', 'start_date', 'end_date',
+        'flyer_url', 'website_url', 'online_reg',
+        'permit_number', 'director', 'promoter',
+    )
     ordering_fields = '__all__'

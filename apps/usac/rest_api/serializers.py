@@ -1,8 +1,15 @@
 from rest_framework import serializers
 
-from apps.usac.models import (
-    Director, Promoter, EventType, EventDay, Race,
-    Participant, Event,
+from apps.usac.models import *
+
+__all__ = (
+    "DirectorSerializer",
+    "PromoterSerializer",
+    "EventTypeSerializer",
+    "EventDaySerializer",
+    "RaceSerializer",
+    "ParticipantSerializer",
+    "EventSerializer",
 )
 
 

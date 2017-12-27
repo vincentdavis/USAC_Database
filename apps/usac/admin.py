@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import Director, Promoter, EventType, EventDay, Race, \
-    Participant, Event
+from .models import *
 
 admin.site.register(Director)
 admin.site.register(Promoter)

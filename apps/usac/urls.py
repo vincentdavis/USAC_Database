@@ -2,10 +2,7 @@ from rest_framework import routers
 
 from django.urls import include, path
 
-from .rest_api.views import (
-    DirectorView, PromoterView, EventTypeView,
-    EventDayView, RaceView, EventView, ParticipantView,
-)
+from .rest_api.views import *
 
 rest_router = routers.DefaultRouter()
 rest_router.trailing_slash = "/?"  # added to support both / and slashless
