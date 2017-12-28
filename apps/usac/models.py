@@ -9,6 +9,7 @@ __all__ = (
     "Race",
     "RaceResult",
     "Participant",
+    "LapTimes",
 )
 
 
@@ -124,9 +125,6 @@ class Participant(models.Model):
     def __str__(self):
         return '{0} {1}'.format(self.fname, self.lname)
 
-# TODO RaceResults class
-
-
 class RaceResult(models.Model):
     """
         Race Result for ..
@@ -135,13 +133,27 @@ class RaceResult(models.Model):
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
     participant = models.ForeignKey(Participant, on_delete=models.CASCADE)
 
-    place = models.CharField(max_length=255, null=False, blank=True)
-    points = models.FloatField(null=False)
-    city_state = models.CharField(max_length=255, null=False, blank=True)
+    place = models.CharField(max_length=255, null=True, blank=True)
+    points = models.CharField(max_length=255, null=True, blank=True)
+    city_state = models.CharField(max_length=255, null=True, blank=True)
     result_time = models.CharField(max_length=255, null=True, blank=True)
-    usac = models.CharField(max_length=255, null=False, blank=True)
-    bib = models.CharField(max_length=255, null=False, blank=True)
-    team = models.CharField(max_length=255, null=False, blank=True)
+    usac = models.CharField(max_length=255, null=True, blank=True)
+    bib = models.CharField(max_length=255, null=True, blank=True)
+    team = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return self.participant
+        return str(self.participant)
+
+class LapTimes(models.Model):
+    """
+        LapTimes
+    """
+    result = models.ForeignKey(RaceResult, on_delete=models.CASCADE)
+
+    lap1 = models.CharField(max_length=255, null=True, blank=True)
+    lap2 = models.CharField(max_length=255, null=True, blank=True)
+    lap3 = models.CharField(max_length=255, null=True, blank=True)
+    lap4 = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.result)
