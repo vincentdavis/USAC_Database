@@ -7,6 +7,7 @@ __all__ = (
     "Event",
     "EventDay",
     "Race",
+    "RaceResult",
     "Participant",
 )
 
@@ -124,3 +125,23 @@ class Participant(models.Model):
         return '{0} {1}'.format(self.fname, self.lname)
 
 # TODO RaceResults class
+
+
+class RaceResult(models.Model):
+    """
+        Race Result for ..
+        Place, Points, Name, City, State, Time, USAC#, Bib, Team
+    """
+    race = models.ForeignKey(Race, on_delete=models.CASCADE)
+    participant = models.ForeignKey(Participant, on_delete=models.CASCADE)
+
+    place = models.IntegerField(null=False)
+    points = models.FloatField(null=False)
+    city_state = models.CharField(max_length=255)
+    result_time = models.CharField(max_length=255, null=True, blank=True)
+    usac = models.IntegerField()
+    bib = models.IntegerField()
+    team = models.CharField(max_length=255, null=False)
+
+    def __str__(self):
+        return self.participant

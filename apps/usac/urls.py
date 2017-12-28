@@ -13,6 +13,7 @@ rest_router.register(r'event_day', EventDayView)
 rest_router.register(r'race', RaceView)
 rest_router.register(r'event', EventView)
 rest_router.register(r'participant', ParticipantView)
+rest_router.register(r'raceresult', RaceResultView)
 
 
 app_name = 'rest_api'
