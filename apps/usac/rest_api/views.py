@@ -13,6 +13,8 @@ __all__ = (
     "RaceView",
     "ParticipantView",
     "EventView",
+    "RaceResultView",
+    "LapTimesView",
 )
 
 
@@ -58,6 +60,23 @@ class RaceView(viewsets.ModelViewSet):
     queryset = Race.objects.all()
     serializer_class = RaceSerializer
     filter_fields = ('event_day', 'name', 'race_id', 'url')
+    ordering_fields = '__all__'
+
+
+class RaceResultView(viewsets.ModelViewSet):
+    """ rest api RaceResult resource. Place, Points, Name, City, State, Time, USAC#, Bib, Team"""
+
+    queryset = RaceResult.objects.all()
+    serializer_class = RaceResultSerializer
+    filter_fields = ('race', 'place', 'points', 'participant', 'city_state', 'result_time', 'usac', 'bib', 'team')
+    ordering_fields = '__all__'
+
+class LapTimesView(viewsets.ModelViewSet):
+    """ LapTimes RaceResult, Lap1, Lap2, Lap3, Lap4"""
+
+    queryset = LapTimes.objects.all()
+    serializer_class = LapTimesSerializer
+    filter_fields = ('result', 'lap1', 'lap2', 'lap3', 'lap4')
     ordering_fields = '__all__'
 
 

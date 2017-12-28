@@ -10,6 +10,8 @@ __all__ = (
     "RaceSerializer",
     "ParticipantSerializer",
     "EventSerializer",
+    "RaceResultSerializer",
+    "LapTimesSerializer",
 )
 
 
@@ -40,6 +42,17 @@ class EventDaySerializer(serializers.ModelSerializer):
 class RaceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Race
+        fields = '__all__'
+
+class RaceResultSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RaceResult
+        fields = '__all__'
+
+
+class LapTimesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LapTimes
         fields = '__all__'
 
 
