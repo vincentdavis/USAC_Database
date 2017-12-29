@@ -72,11 +72,11 @@ class RaceResultView(viewsets.ModelViewSet):
     ordering_fields = '__all__'
 
 class LapTimesView(viewsets.ModelViewSet):
-    """ LapTimes RaceResult, Lap1, Lap2, Lap3, Lap4"""
+    """ LapTimes RaceResult, Laps"""
 
     queryset = LapTimes.objects.all()
     serializer_class = LapTimesSerializer
-    filter_fields = ('result', 'lap1', 'lap2', 'lap3', 'lap4')
+    filter_fields = ('result', 'laps')
     ordering_fields = '__all__'
 
 
