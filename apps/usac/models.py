@@ -150,10 +150,7 @@ class LapTimes(models.Model):
     """
     result = models.ForeignKey(RaceResult, on_delete=models.CASCADE)
 
-    lap1 = models.CharField(max_length=255, null=True, blank=True)
-    lap2 = models.CharField(max_length=255, null=True, blank=True)
-    lap3 = models.CharField(max_length=255, null=True, blank=True)
-    lap4 = models.CharField(max_length=255, null=True, blank=True)
+    laps = models.CharField(max_length=1000, null=True, blank=True)
 
     def __str__(self):
         return str(self.result)
